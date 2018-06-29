@@ -40,13 +40,13 @@ const AddModal = props => {
             </FormGroup>
               <FormGroup controlId="complemento">
                 <div className={`form label complemento`}>
-                  Senha
+                  complemento
                 </div>
                 <FormControl type="complemento" placeholder="complemento" value={complemento} onChange={(e) => handleChange(e)}/>
               </FormGroup>
               <FormGroup controlId="email_empresa">
                 <div className={`form label email_empresa`}>
-                  Senha
+                  Email Empresa
                 </div>
                 <FormControl type="email_empresa" placeholder="email_empresa" value={email_empresa} onChange={(e) => handleChange(e)}/>
               </FormGroup>

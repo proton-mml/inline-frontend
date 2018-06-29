@@ -13,17 +13,20 @@ const Header = (props) => {
   		</Navbar.Header>
   		<Nav>
   			<NavItem eventKey={1} href="#">
-  				Link
+  				Empresas
   			</NavItem>
   			<NavItem eventKey={2} href="#">
-  				Link
+  				Adicionar fila
   			</NavItem>
-  			<NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-  				<MenuItem eventKey={3.1}>Action</MenuItem>
-  				<MenuItem eventKey={3.2}>Another action</MenuItem>
-  				<MenuItem eventKey={3.3}>Something else here</MenuItem>
+  			<NavItem eventKey={3} href="#">
+  				Status fila
+  			</NavItem>
+  			<NavDropdown eventKey={4} title="Configurações" id="basic-nav-dropdown">
+  				<MenuItem eventKey={4.1}>Perfil</MenuItem>
+  				<MenuItem eventKey={4.2}>Adicionar Fila</MenuItem>
+  				<MenuItem eventKey={4.3}>Configurar</MenuItem>
   				<MenuItem divider />
-  				<MenuItem eventKey={3.4}>Separated link</MenuItem>
+  				<MenuItem eventKey={4.4}>Sair</MenuItem>
   			</NavDropdown>
   		</Nav>
 		</Navbar>

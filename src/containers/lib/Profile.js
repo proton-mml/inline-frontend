@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container } from './Container';
 import { AddModal } from './AddModal';
+import { TableUsers } from './TableUsers';
 import { ProfileController } from '../../controllers';
 import { Header, LoginForm } from '../../components';
 import { Alert, Button } from 'react-bootstrap';
@@ -45,6 +46,7 @@ class Profile extends Container {
   			<strong>Adicione um estabelecimento!</strong> Clique no botão para adicionar um estabelecimento.
 				<Button bsStyle="primary" onClick={() => $('#add_company').modal('open')}>Adicionar +</Button>
 			</Alert>
+			<TableUsers data={this.state.table}/>
 		</div>
 		);
 	}
