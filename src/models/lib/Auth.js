@@ -1,8 +1,8 @@
 export class Auth {
 	constructor(auth = {}) {
-		this.email = auth.data ? auth.data.email : '';
-		this.nome = auth.data ? auth.data.nome : '';
-		this.tipo = auth.data ? auth.data.tipo : '';
+		this.email = auth.user ? auth.user.email : '';
+		this.nome = auth.user ? auth.user.nome : '';
+		this.tipo = auth.user ? auth.user.tipo : '';
 		this.token = auth.token || '';
 	}
 }

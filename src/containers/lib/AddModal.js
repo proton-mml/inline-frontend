@@ -4,7 +4,7 @@ import { Form, FormGroup, Col, Button, FormControl } from 'react-bootstrap';
 
 
 const AddModal = props => {
-	let { title, id, handleChange, estado, cidade, logradouro, numero, complemento, email_empresa, handleSubmit } = props;
+	let { title, id, handleChange, estado, cidade, logradouro, numero, complemento, email_empresa, senha, cnpj, nome, handleSubmit } = props;
 
 	id = id || 'add_company';
 
@@ -14,45 +14,66 @@ const AddModal = props => {
           <h4 className='title'>{title}</h4>
   				<div className='content'>
   				  <Form horizontal className="add">
-            <FormGroup controlId="estado">
+						<FormGroup controlId="nome" className={`group-nome`}>
+              <div className={`form label nome`}>
+                Nome
+              </div>
+              <FormControl type="nome" value={nome} onChange={(e) => handleChange(e)}/>
+            </FormGroup>
+						<FormGroup controlId="cnpj" className={`group-cnpj`}>
+              <div className={`form label cnpj`}>
+                CNPJ
+              </div>
+              <FormControl type="cnpj" value={cnpj} onChange={(e) => handleChange(e)}/>
+            </FormGroup>
+            <FormGroup controlId="estado" className={`group-estado`}>
               <div className={`form label estado`}>
-                estado
+                Estado
               </div>
-              <FormControl type="estado" placeholder="estado" value={estado} onChange={(e) => handleChange(e)}/>
+              <FormControl type="estado" value={estado} onChange={(e) => handleChange(e)}/>
             </FormGroup>
-            <FormGroup controlId="cidade">
+            <FormGroup controlId="cidade" className={`group-cidade`}>
               <div className={`form label cidade`}>
-                cidade
+                Cidade
               </div>
-              <FormControl type="cidade" placeholder="cidade" value={cidade} onChange={(e) => handleChange(e)}/>
+              <FormControl type="cidade" value={cidade} onChange={(e) => handleChange(e)}/>
             </FormGroup>
-            <FormGroup controlId="logradouro">
+            <FormGroup controlId="logradouro" className={`group-logradouro`}>
               <div className={`form label logradouro`}>
-                logradouro
+                Rua
               </div>
-              <FormControl type="logradouro" placeholder="logradouro" value={logradouro} onChange={(e) => handleChange(e)}/>
+              <FormControl type="logradouro" value={logradouro} onChange={(e) => handleChange(e)}/>
             </FormGroup>
-            <FormGroup controlId="numero">
+            <FormGroup controlId="numero" className={`group-numero`}>
               <div className={`form label numero`}>
-                numero
+                Numero
               </div>
-              <FormControl type="numero" placeholder="numero" value={numero} onChange={(e) => handleChange(e)}/>
+              <FormControl type="numero" value={numero} onChange={(e) => handleChange(e)}/>
             </FormGroup>
-              <FormGroup controlId="complemento">
+              <FormGroup controlId="complemento" className={`group-complemento`}>
                 <div className={`form label complemento`}>
-                  complemento
+                  Complemento
                 </div>
-                <FormControl type="complemento" placeholder="complemento" value={complemento} onChange={(e) => handleChange(e)}/>
+                <FormControl type="complemento" value={complemento} onChange={(e) => handleChange(e)}/>
               </FormGroup>
-              <FormGroup controlId="email_empresa">
+              <FormGroup controlId="email_empresa" className={`group-email_empresa`}>
                 <div className={`form label email_empresa`}>
-                  Email Empresa
+                  Email
                 </div>
-                <FormControl type="email_empresa" placeholder="email_empresa" value={email_empresa} onChange={(e) => handleChange(e)}/>
+                <FormControl type="email_empresa" value={email_empresa} onChange={(e) => handleChange(e)}/>
               </FormGroup>
+							<FormGroup controlId="senha" className={`group-senha`}>
+	              <div className={`form label senha`}>
+	                Senha
+	              </div>
+	              <FormControl type="password" value={senha} onChange={(e) => handleChange(e)}/>
+	            </FormGroup>
   					</Form>
-            <FormGroup>
+            <FormGroup className={`group-add`}>
               <Button onClick={(e) => handleSubmit(e)}>Adicionar</Button>
+            </FormGroup>
+            <FormGroup className={`group-cancel`}>
+              <Button onClick={() => $('#add_company').modal('close')}>Cancelar</Button>
             </FormGroup>
   	      </div>
         </div>

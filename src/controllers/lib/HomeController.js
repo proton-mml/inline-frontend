@@ -21,7 +21,7 @@ export class HomeController {
 	async handleSubmitAction() {
 		const { email, password } = this.getState();
 		const promise = await this.authRepo.authorize({ email, senha:password });
-		console.log(promise);
+		console.log("promise->", promise);
 		if(promise.data.success) {
 			window.sessionStorage.setItem('session_token', promise.data.token);
 			this.navigator.navigateTo('/profile');

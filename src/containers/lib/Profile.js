@@ -12,8 +12,9 @@ class Profile extends Container {
 		super(props);
 
 		this.state = {
-			estado:'', cidade:'', logradouro:'', numero:'', complemento:'', email_empresa:'',
-			table:[]
+			estado:'', cidade:'', logradouro:'', numero:'', complemento:'', email_empresa:'', senha:'', cnpj:'', nome:'',
+			table:[],
+			my_email:false
 		};
 
 		const toController = {
@@ -31,6 +32,9 @@ class Profile extends Container {
 	}
 
 	componentWillReceiveProps(nextProps) {
+		if (!this.props.auth && nextProps.auth) {
+			this.setState({my_email:nextProps.auth.email});
+		}
 	}
 
 	componentDidUpdate() {
@@ -53,7 +57,9 @@ class Profile extends Container {
 }
 
 const mstp = state => {
-	console.log(state);
+	return {
+		auth:state.auth.model
+	};
 };
 
 export default connect(mstp, {})(Profile);

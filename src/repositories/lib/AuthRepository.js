@@ -6,7 +6,6 @@ export class AuthRepository extends BaseRepository {
 	}
 
 	authorize(body) {
-		console.log(body);
 		return this.post("/autorizar", body);
 	}
 
