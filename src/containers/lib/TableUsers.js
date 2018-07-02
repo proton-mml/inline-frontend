@@ -6,7 +6,6 @@ const header = props => {
     <tr>
       <th>#</th>
 			<th>Nome</th>
-			<th>CNPJ</th>
 			<th>Email</th>
 			<th>Cidade</th>
 			<th>Estado</th>
@@ -25,7 +24,6 @@ const rows = props => {
 			<tr>
 				<td>{count}</td>
 				<td>{d.nome}</td>
-				<td>{d.cnpj}</td>
 				<td>{d.email_empresa}</td>
 				<td>{d.cidade}</td>
 				<td>{d.estado}</td>

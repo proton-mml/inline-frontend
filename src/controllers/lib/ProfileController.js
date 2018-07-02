@@ -12,7 +12,21 @@ export class ProfileController {
 		this.navigator = new Navigator(router);
 		this.handleChangeAction = this.handleChangeAction.bind(this);
 		this.handleSubmitAction = this.handleSubmitAction.bind(this);
+		this.getAllCompanies = this.getAllCompanies.bind(this);
 
+	}
+	async getAllCompanies(my_email) {
+		var {table} = this.getState();
+		var obj = {
+			email_empresa:my_email,
+			token:window.sessionStorage.getItem('session_token')
+		};
+		const resp = await this.companyRepo.getAll(obj);
+		Object.keys(resp.data.answer).map(function (key, index) {
+			var item = resp.data.answer[key];
+			table.push({estado:item.estado, cidade:item.cidade, logradouro:item.logradouro, numero:item.numero, complemento:item.complemento, email_empresa:item.email_empresa, senha:item.senha, nome:item.nome});
+		});
+		this.callback({table});
 	}
 	handleChangeAction(e){
 		const to = {};

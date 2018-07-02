@@ -20,17 +20,11 @@ const AddModal = props => {
               </div>
               <FormControl type="nome" value={nome} onChange={(e) => handleChange(e)}/>
             </FormGroup>
-						<FormGroup controlId="cnpj" className={`group-cnpj`}>
-              <div className={`form label cnpj`}>
-                CNPJ
-              </div>
-              <FormControl type="cnpj" value={cnpj} onChange={(e) => handleChange(e)}/>
-            </FormGroup>
             <FormGroup controlId="estado" className={`group-estado`}>
               <div className={`form label estado`}>
                 Estado
               </div>
-              <FormControl type="estado" value={estado} onChange={(e) => handleChange(e)}/>
+              <FormControl maxLength={2} type="estado" value={estado} onChange={(e) => handleChange(e)}/>
             </FormGroup>
             <FormGroup controlId="cidade" className={`group-cidade`}>
               <div className={`form label cidade`}>

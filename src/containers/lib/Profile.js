@@ -34,7 +34,9 @@ class Profile extends Container {
 	componentWillReceiveProps(nextProps) {
 		if (!this.props.auth && nextProps.auth) {
 			this.setState({my_email:nextProps.auth.email});
+			this.controller.getAllCompanies(nextProps.auth.email);
 		}
+
 	}
 
 	componentDidUpdate() {
@@ -42,6 +44,7 @@ class Profile extends Container {
 	render() {
 		const { handleChangeAction, handleSubmitAction } = this.controller;
 		const { estado, cidade, logradouro, numero, complemento, email_empresa } = this.state;
+		console.log(this.state.table);
 		return (
     <div className='profile'>
 			<AddModal handleChange={handleChangeAction} estado={estado} cidade={cidade} logradouro={logradouro} numero={numero} complemento={complemento} email_empresa={email_empresa} handleSubmit={handleSubmitAction}/>

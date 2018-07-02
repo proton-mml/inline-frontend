@@ -8,5 +8,8 @@ export class CompanyRepository extends BaseRepository {
 	create(body) {
 		return this.post("/estabelecimento_novo", body);
 	}
+	getAll(body) {
+		return this.post("/estabelecimentos", body);
+	}
 
 }
